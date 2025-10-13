@@ -6,7 +6,7 @@ void main() {
     char letra = Character.toLowerCase(IO.readln(nombre + ", introduce una s para imprimir una potencia de N o una n para parar.\n").charAt(0));
 
     while ((letra != 'n') && (letra != 's')) {
-        letra = Character.toLowerCase(IO.readln(nombre + ", introduce una s para imprimir una potencia de N o una n para parar.\n").charAt(0));
+        letra = Character.toLowerCase(IO.readln("¡Error!, introduce una s para imprimir una potencia de N o una n para parar.\n").charAt(0));
     }
 
     int exponente = 0;
