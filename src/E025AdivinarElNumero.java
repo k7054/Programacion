@@ -6,7 +6,7 @@ void main() {
 
     IO.print("\n\n\n\n\n\n\n\n");
 
-    String nombreJugador2 = IO.readln("Eres el jugadro 2, ¿Cómo te llamas?\n").toUpperCase();
+    String nombreJugador2 = IO.readln("Eres el jugador 2, ¿Cómo te llamas?\n").toUpperCase();
 
     int numAdivinado;
 
