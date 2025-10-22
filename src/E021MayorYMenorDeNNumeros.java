@@ -11,12 +11,9 @@ void main() {
 
     for (int i = 1; i <= cantidadNum; i++) {
         int numeros = Integer.parseInt(IO.readln());
-        if (numeros > mayor) {
-            mayor = numeros;
-        }
-        if (numeros < menor) {
-            menor = numeros;
-        }
+
+        if (numeros > mayor) mayor = numeros;
+        if (numeros < menor) menor = numeros;
     }
 
     System.out.printf("El menor es %d y el mayor es %d\n", menor, mayor);
