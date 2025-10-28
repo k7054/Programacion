@@ -1,5 +1,5 @@
 void multiplicacion(int numero) {
-    for (int i = 1; i <= 10; i++) {
+    for (int i = 0; i <= 10; i++) {
         IO.println(String.format("%d x %d = %d", numero, i, numero * i));
     }
 }
