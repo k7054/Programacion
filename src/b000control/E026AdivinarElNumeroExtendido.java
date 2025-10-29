@@ -25,6 +25,9 @@ void main() {
     int cantIntentosGastados = 0;
     int cantIntentosDisponibles = 5;
     int diferencia;
+
+    System.out.printf ("Tienes %d intentos.\n", cantIntentosDisponibles);
+
     do {
         System.out.println ("Introduzca un número:");
         numIntentado = teclado.nextInt();
