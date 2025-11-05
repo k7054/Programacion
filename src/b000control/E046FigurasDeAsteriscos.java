@@ -21,8 +21,8 @@ void main() {
     IO.println("Triángulo");
 
     for (int a = 1; a <= m; a++) {
-        for (int b = a; b <= n; b++) {
-            if ((a == 1) || (a == m) || (b == a) || (b == n)) {
+        for (int b = 1; b <= a; b++) {
+            if ((a == 1) || (a == m) || (b == 1) || (b <= n)) {
                 IO.print(" * ");
             } else {
                 IO.print("   ");

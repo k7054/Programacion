@@ -15,10 +15,12 @@ void main() {
     } while ((num2 < num1));
 
     int resto = num1 % 3;
+    if (resto != 0) {
+        int suma = (3 - resto);
+        num1 = num1 + suma;
+    }
 
-    int suma = (3 - resto) % 3;
-
-    for (int i = num1 + suma; i <= num2; i= i + 3) {
+    for (int i = num1; i <= num2; i= i + 3) {
         IO.println(i);
     }
 }
