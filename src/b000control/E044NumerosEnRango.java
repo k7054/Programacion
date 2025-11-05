@@ -12,7 +12,7 @@ void main() {
 
     do {
         num2 = Integer.parseInt(IO.readln(nombre + ", introduce el segundo número entero positivo, tiene que ser mayor que el primer número:\n"));
-    } while ((num2 < num1));
+    } while (num2 < num1);
 
     int resto = num1 % 3;
     if (resto != 0) {
