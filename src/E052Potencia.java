@@ -10,7 +10,7 @@ int calcularPotencia(int base, int exponente) {
 
 void main() {
     IO.println("POTENCIA");
-    String nombre = IO.readln("¿Cómo te llamas?\n");
+    String nombre = IO.readln("¿Cómo te llamas?\n").toUpperCase();
 
     int base;
     int exponente;

@@ -14,7 +14,7 @@ boolean esPrimo(int numero) {
 
 void main() {
     IO.println("ES PRIMO");
-    String nombre = IO.readln("¿Cómo te llamas?\n");
+    String nombre = IO.readln("¿Cómo te llamas?\n").toUpperCase();
 
     int numero = Integer.parseInt(IO.readln(nombre + ", introduce un número y te diré si es primo o no\n"));
 
