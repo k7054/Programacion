@@ -5,7 +5,9 @@ boolean esDivisible(int dividendo, int divisor) {
 boolean esPrimo(int numero) {
     if (numero == 1) return false;
 
-    for (int i = 2; i <= numero -1; i++) {
+    int limite = (int) Math.sqrt(numero);
+
+    for (int i = 2; i <= limite; i++) {
         if (esDivisible(numero, i)) return false;
     }
 
