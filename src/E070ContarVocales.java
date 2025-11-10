@@ -1,10 +1,13 @@
 void main() {
-    String s = "Arrivederci";
+    String s = "Arrivederci".toLowerCase();
 
-    IO.print(String.format("El string tiene %d caracteres y hay una letra %s en su posición 4.\n", s.length(), s.charAt(4)));
+    int contador = 0;
 
     for (int i = 0; i < s.length(); i++) {
         char c = s.charAt(i);
-        IO.println(c);
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+                c == 'á' || c == 'é' || c == 'í' || c == 'ó' || c == 'ú') contador++;
     }
+
+    IO.print(String.format("El string tiene %d caracteres y tiene %d vocales.\n", s.length(), contador));
 }
