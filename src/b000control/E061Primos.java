@@ -29,7 +29,7 @@ void main() {
     }
 
     int n = Integer.parseInt(IO.readln(nombre + ", introduce un número y te diré los primeros n números que son primos.\n"));
-    int numActual = 1;
+    int numActual = 2;
     int contador = 0;
 
     while (contador < n) {
