@@ -5,7 +5,11 @@ int contarConsonantes(String s) {
 
     for (int i = 0; i < sMinuscula.length(); i++) {
         char c = sMinuscula.charAt(i);
-        if (c >= 'b' && c <= 'z' && c != 'e' && c != 'i' && c != 'o' && c != 'u' || c == 'ñ') contador++;
+        if (
+            c >= 'b' && c <= 'z' && c != 'e' && c != 'i' && c != 'o' && c != 'u'
+            ||
+            c == 'ñ'
+        ) contador++;
     }
 
     return contador;
