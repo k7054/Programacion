@@ -14,7 +14,7 @@ int contarVocales(String s) {
 }
 
 void main() {
-    IO.println("CONTAR VOCALES");
+    IO.println("CONTAR VOCALES CON SWITCH");
     String nombre = IO.readln("¿Cómo te llamas?\n").toUpperCase();
 
     String s = IO.readln(nombre + ", introduce una palabra o frase y te dire cuantas vocales tiene:\n");
