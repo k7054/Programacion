@@ -1,5 +1,5 @@
 boolean esPalindromo(String texto) {
-    String sMinuscula = texto.toLowerCase();
+    String sMinuscula = texto.toLowerCase().replace(" ", "");
     boolean esIgual = true;
 
     for (int i = 0; i < sMinuscula.length() / 2; i++) {
