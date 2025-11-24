@@ -3,7 +3,7 @@ String diasMes(int numero) {
         case 1, 3, 5, 7, 8, 10, 12 -> "31 días";
         case 4, 6, 9, 11 -> "30 días";
         case 2 -> "28 días (29 días si el año es bisiesto)";
-        default -> throw new IllegalStateException("Unexpected value: " + numero);
+        default -> "Unexpected value";
     };
 }
 
