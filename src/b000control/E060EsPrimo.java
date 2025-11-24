@@ -25,5 +25,4 @@ void main() {
     } else {
         IO.println("No es primo");
     }
-    IO.println();
 }
