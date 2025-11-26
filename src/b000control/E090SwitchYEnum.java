@@ -55,7 +55,7 @@ void main() {
     IO.println("Ejercicio 4:");
     enum Direccion {Norte, Sur, Este, Oeste}
 
-    String direccion = IO.readln(nombre + ", introduce una dirección (Norte, Sur, Este, Oeste) para avanzar retroceder o desplazarse:");
+    String direccion = IO.readln(nombre + ", introduce una dirección (Norte, Sur, Este, Oeste) para avanzar retroceder o desplazarse:\n");
 
     Direccion direcciones = Direccion.valueOf(direccion);
 
