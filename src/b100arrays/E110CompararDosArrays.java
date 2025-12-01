@@ -17,17 +17,17 @@ void main() {
         if (numA == numB) IO.println(String.format("Posición %d, son iguales.", i));
     }
 
-    if (arrayA.length > limiteAB) {
-        for (int i = limiteAB; i < arrayA.length; i++) {
-            int numA = arrayA[i];
-            IO.println(String.format("ArrayA posición %d valor %d", i, numA));
-        }
-    }
+    int[] arrayMayor;
 
-    if (arrayB.length > limiteAB){
-        for (int i = limiteAB; i < arrayB.length; i++) {
-            int numB = arrayB[i];
-            IO.println(String.format("ArrayB posición %d valor %d", i, numB));
+    if (arrayA.length > arrayB.length) {
+        arrayMayor = arrayA;
+        for (int i = limiteAB; i < arrayMayor.length; i++) {
+            IO.println(String.format("ArrayA, posición %d, valor %d.", i, arrayMayor[i]));
+        }
+    } else {
+        arrayMayor = arrayB;
+        for (int i = limiteAB; i < arrayMayor.length; i++) {
+            IO.println(String.format("ArrayB, posición %d, valor %d.", i, arrayMayor[i]));
         }
     }
 
