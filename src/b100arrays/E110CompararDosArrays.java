@@ -17,17 +17,17 @@ void main() {
         if (numA == numB) IO.println(String.format("Posición %d, son iguales.", i));
     }
 
-    int[] arrayMayor;
+    int[] arrayMayorInt;
 
     if (arrayA.length > arrayB.length) {
-        arrayMayor = arrayA;
-        for (int i = limiteAB; i < arrayMayor.length; i++) {
-            IO.println(String.format("ArrayA, posición %d, valor %d.", i, arrayMayor[i]));
+        arrayMayorInt = arrayA;
+        for (int i = limiteAB; i < arrayMayorInt.length; i++) {
+            IO.println(String.format("ArrayA, posición %d, valor %d.", i, arrayMayorInt[i]));
         }
     } else {
-        arrayMayor = arrayB;
-        for (int i = limiteAB; i < arrayMayor.length; i++) {
-            IO.println(String.format("ArrayB, posición %d, valor %d.", i, arrayMayor[i]));
+        arrayMayorInt = arrayB;
+        for (int i = limiteAB; i < arrayMayorInt.length; i++) {
+            IO.println(String.format("ArrayB, posición %d, valor %d.", i, arrayMayorInt[i]));
         }
     }
 
@@ -47,19 +47,20 @@ void main() {
         if (numC == numD) IO.println(String.format("Posición %d, son iguales.", i));
     }
 
-    if (arrayC.length > limiteCD) {
-        for (int i = limiteCD; i < arrayC.length; i++) {
-            double numC = arrayC[i];
-            IO.println(String.format("ArrayC posición %d valor %.4f", i, numC));
+    double[] arrayMayorDouble;
+
+    if (arrayC.length > arrayD.length) {
+        arrayMayorDouble = arrayC;
+        for (int i = limiteCD; i < arrayMayorDouble.length; i++) {
+            IO.println(String.format("ArrayC, posición %d, valor %.4f.", i, arrayMayorDouble[i]));
+        }
+    } else {
+        arrayMayorDouble = arrayD;
+        for (int i = limiteCD; i < arrayMayorDouble.length; i++) {
+            IO.println(String.format("ArrayD, posición %d, valor %.4f.", i, arrayMayorDouble[i]));
         }
     }
 
-    if (arrayD.length > limiteCD){
-        for (int i = limiteCD; i < arrayD.length; i++) {
-            double numD = arrayD[i];
-            IO.println(String.format("ArrayD posición %d valor %.4f", i, numD));
-        }
-    }
 
     IO.println("\nComparación booleans");
 
@@ -76,17 +77,17 @@ void main() {
         else                          IO.println(String.format("Posición %d, no son iguales", i));
     }
 
-    if (arrayE.length > limiteEF) {
-        for (int i = limiteEF; i < arrayE.length; i++) {
-            boolean indicadorE = arrayE[i];
-            IO.println(String.format("ArrayE posición %d valor %b", i, indicadorE));
-        }
-    }
+    boolean[] arrayMayorBoolean;
 
-    if (arrayF.length > limiteEF){
-        for (int i = limiteEF; i < arrayF.length; i++) {
-            boolean indicadorF = arrayF[i];
-            IO.println(String.format("ArrayF posición %d valor %b", i, indicadorF));
+    if (arrayA.length > arrayB.length) {
+        arrayMayorBoolean = arrayE;
+        for (int i = limiteEF; i < arrayMayorBoolean.length; i++) {
+            IO.println(String.format("ArrayE posición %d valor %b", i, arrayMayorBoolean[i]));
+        }
+    } else {
+        arrayMayorBoolean = arrayF;
+        for (int i = limiteEF; i < arrayMayorBoolean.length; i++) {
+            IO.println(String.format("ArrayF posición %d valor %b", i, arrayMayorBoolean[i]));
         }
     }
 }
