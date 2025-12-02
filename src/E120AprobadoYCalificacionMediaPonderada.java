@@ -9,4 +9,5 @@ void main() {
     for (int i = 0; i < calificaciones.length; i++) {
         media = media + (calificaciones[i] * pesos[i]);
     }
+
 }

@@ -4,6 +4,7 @@ void main() {
 
     int cantidadNum;
 
+
     do {
         cantidadNum = Integer.parseInt(IO.readln(nombre + ", introduzca la cantidad de números deseada(mínimo 2):\n"));
     } while (cantidadNum < 2);
