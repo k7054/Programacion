@@ -1,7 +1,7 @@
 void main() {
     IO.println("MÓDULO DE VECTOR");
 
-    double[] valores = {4, 3, 6, 2, 4};
+    double[] valores = {4, 3, 6, 2};
 
     IO.println(Arrays.toString(valores));
 
