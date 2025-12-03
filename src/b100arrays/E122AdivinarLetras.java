@@ -1,28 +1,73 @@
+void imprimirAhorcado(int numFallos) {
+    System.out.println(" ____");
+
+    switch (numFallos) {
+        case 1 -> {
+            System.out.println(" |  0");
+            System.out.println(" |");
+            System.out.println(" |");
+        }
+        case 2 -> {
+            System.out.println(" |  0");
+            System.out.println(" |  |");
+            System.out.println(" |");
+        }
+        case 3 -> {
+            System.out.println(" |  0");
+            System.out.println(" | -|");
+            System.out.println(" |");
+        }
+        case 4 -> {
+            System.out.println(" |  0");
+            System.out.println(" | -|-");
+            System.out.println(" |");
+        }
+        case 5 -> {
+            System.out.println(" |  0");
+            System.out.println(" | -|-");
+            System.out.println(" | /");
+        }
+        case 6 -> {
+            System.out.println(" |  0");
+            System.out.println(" | -|-");
+            System.out.println(" | / \\ ");
+        }
+    }
+    System.out.println("_|_");
+    System.out.println();
+}
+
 void main() {
     IO.println("ADIVINAR LETRAS");
 
-    String nombre = IO.readln("¿Cómo te llamas?\n").toUpperCase();
+    String nombreJugador1 = IO.readln("Jugador 1, ¿Cómo te llamas?\n").toUpperCase();
 
     int cantidadLetras;
 
     do {
-        cantidadLetras = Integer.parseInt(IO.readln(nombre + ", introduzca la cantidad de letras deseada(mínimo 1):\n"));
+        cantidadLetras = Integer.parseInt(IO.readln(nombreJugador1 + ", introduzca la cantidad de letras deseada(mínimo 1):\n"));
     } while (cantidadLetras <= 0);
 
     char[] letras = new char[cantidadLetras];
 
     for (int i = 0; i < letras.length; i++) {
-        letras[i] = IO.readln(String.format("%s, introduce la letra secreta %d:\n", nombre, i + 1)).charAt(0);
+        letras[i] = IO.readln(String.format("%s, introduce la letra secreta %d:\n", nombreJugador1, i + 1)).charAt(0);
     }
 
-    IO.println(String.format("\n\n\n\n\n\n\n\n\n Hay %d letra(s) secreta(s)", cantidadLetras));
+    IO.println("\n\n\n\n\n\n\n\n\n");
+
+    int limiteFallos = 6;
+
+    String nombreJugador2 = IO.readln("Jugador 2, ¿Cómo te llamas?\n").toUpperCase();
+
+    IO.println(String.format("%s, tienes un limite de %d fallos", nombreJugador2, limiteFallos));
 
     boolean[] letrasAdivinadas = new boolean[cantidadLetras];
     boolean todoAcertado;
-    int intentos = cantidadLetras;
+    int fallos = 0;
 
     do {
-        char letraIntentada = IO.readln(String.format("%s, introduce la letra intentada:\n", nombre)).charAt(0);
+        char letraIntentada = IO.readln(String.format("%s, introduce la letra intentada:\n", nombreJugador2)).charAt(0);
 
         boolean encontrada = false;
 
@@ -31,13 +76,21 @@ void main() {
                 letrasAdivinadas[i] = true;
                 encontrada = true;
             }
+
+            if (letrasAdivinadas[i]) {
+                IO.print(letras[i] + " ");
+            } else {
+                IO.print("_ ");
+            }
         }
 
         if (encontrada) {
-            IO.println("¡LETRA ADIVINADA!");
+            IO.println("\n¡LETRA ADIVINADA!");
+            imprimirAhorcado(fallos);
         } else {
-            IO.println("¡LETRA INCORRECTA!");
-            intentos--;
+            IO.println("\n¡LETRA INCORRECTA!");
+            fallos++;
+            imprimirAhorcado(fallos);
         }
 
         todoAcertado = true;
@@ -48,5 +101,5 @@ void main() {
                 break;
             }
         }
-    } while (!todoAcertado && intentos > 0);
+    } while (!todoAcertado && fallos < limiteFallos);
 }
