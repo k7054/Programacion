@@ -8,14 +8,14 @@ void main() {
 
     double media = 0;
 
-    boolean aprueba = true;
+    boolean notaSuperiorAlMinimo = true;
 
     for (int i = 0; i < calificaciones.length; i++) {
         media = media + (calificaciones[i] * pesos[i]);
-        if (calificaciones[i] < 4) aprueba = false;
+        if (calificaciones[i] < 4) notaSuperiorAlMinimo = false;
     }
 
-    String aprobadoSiNo = (aprueba && media >= 5) ? "sí" : "no";
+    String aprobadoSiNo = (notaSuperiorAlMinimo && media >= 5) ? "sí" : "no";
 
     IO.println(String.format("%s, %s aprueba con una calificación de %.2f.", nombre, aprobadoSiNo, media));
 }
