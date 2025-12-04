@@ -54,7 +54,7 @@ void main() {
         letras[i] = IO.readln(String.format("%s, introduce la letra secreta %d:\n", nombreJugador1, i + 1)).charAt(0);
     }
 
-    IO.println("\n\n\n\n\n\n\n\n\n");
+    IO.println("\n".repeat(10));
 
     int limiteFallos = 6;
 

@@ -1,42 +1,3 @@
-void imprimirAhorcado(int numFallos) {
-    System.out.println(" ____");
-
-    switch (numFallos) {
-        case 1 -> {
-            System.out.println(" |  0");
-            System.out.println(" |");
-            System.out.println(" |");
-        }
-        case 2 -> {
-            System.out.println(" |  0");
-            System.out.println(" |  |");
-            System.out.println(" |");
-        }
-        case 3 -> {
-            System.out.println(" |  0");
-            System.out.println(" | -|");
-            System.out.println(" |");
-        }
-        case 4 -> {
-            System.out.println(" |  0");
-            System.out.println(" | -|-");
-            System.out.println(" |");
-        }
-        case 5 -> {
-            System.out.println(" |  0");
-            System.out.println(" | -|-");
-            System.out.println(" | /");
-        }
-        case 6 -> {
-            System.out.println(" |  0");
-            System.out.println(" | -|-");
-            System.out.println(" | / \\ ");
-        }
-    }
-    System.out.println("_|_");
-    System.out.println();
-}
-
 void main() {
     IO.println("ADIVINAR LETRAS");
 
@@ -54,7 +15,7 @@ void main() {
         letras[i] = IO.readln(String.format("%s, introduce la letra secreta %d:\n", nombreJugador1, i + 1)).charAt(0);
     }
 
-    IO.println("\n\n\n\n\n\n\n\n\n");
+    IO.println("\n".repeat(10));
 
     int limiteFallos = 6;
 
@@ -86,11 +47,9 @@ void main() {
 
         if (encontrada) {
             IO.println("\n¡LETRA ADIVINADA!");
-            imprimirAhorcado(fallos);
         } else {
             IO.println("\n¡LETRA INCORRECTA!");
             fallos++;
-            imprimirAhorcado(fallos);
         }
 
         todoAcertado = true;
