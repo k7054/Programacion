@@ -15,8 +15,7 @@ public class E902MejorADobleCara743 {
 
             for (int i = 0; i < documentos; i++) {
                 int numPaginas = entrada.nextInt();
-                int hojasDobles = numPaginas / 2;
-                hojasAhorradas = hojasDobles - hojasAhorradas;
+                hojasAhorradas = hojasAhorradas + (numPaginas / 2);
             }
 
             System.out.println(hojasAhorradas);
