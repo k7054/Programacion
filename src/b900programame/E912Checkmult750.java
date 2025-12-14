@@ -27,7 +27,7 @@ public class E912Checkmult750 {
                 }
                 num = multiplicacion;
             }
-
+            System.out.println();
             System.out.printf("%d%d\n", num, ceros);
         }
     }
