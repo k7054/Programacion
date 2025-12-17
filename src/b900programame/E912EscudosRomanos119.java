@@ -6,18 +6,23 @@ public class E912EscudosRomanos119 {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        while (true) {
-            int numLegionarios = entrada.nextInt();
+        int numLegionarios = entrada.nextInt();
 
-            if (numLegionarios == 0) break;
+        while (numLegionarios != 0) {
+            int escudosTotales = 0;
 
-            int formacion = numLegionarios;
-            while (true) {
-                int formacionActual = (int) Math.sqrt(formacion);
-                formacion = formacionActual;
-                System.out.println(formacion);
-                if (formacionActual == 1) break;
+            while (numLegionarios > 0) {
+                int lado = (int) Math.sqrt(numLegionarios);
+                int cabezas = lado * lado; // Cuántos legionarios hay en esta formación.
+
+                escudosTotales = escudosTotales + cabezas + (4 * lado);
+
+                numLegionarios = numLegionarios - cabezas;
             }
+
+            System.out.println(escudosTotales);
+
+            numLegionarios = entrada.nextInt();
         }
     }
 }
