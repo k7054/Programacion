@@ -16,7 +16,7 @@ public class Contador {
         else if (valor >= MAX) valor = MAX;
         else                   valor = nuevoValor;
 
-        valor = Math.min(Math.max(nuevoValor, 0), 100);
+        //valor = Math.min(Math.max(nuevoValor, 0), 100);
     }
 
     public void incrementar() {
