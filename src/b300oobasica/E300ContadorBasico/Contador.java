@@ -3,20 +3,31 @@ package b300oobasica.E300ContadorBasico;
 public class Contador {
     private static final int MIN = 0;
     private static final int MAX = 100;
+    private static final int POR_DEFECTO = 50;
 
     private int valor = 0;
-    private String etiqueta;
+    private String etiqueta = "unidades";
 
     public Contador() {
         setValor(MIN);
+        setEtiqueta(etiqueta);
     }
 
     public Contador(int valor) {
         setValor(valor);
     }
 
+    public Contador(String etiqueta) {
+        setEtiqueta(etiqueta);
+    }
+
+    public Contador(int valor, String etiqueta) {
+        setValor(valor);
+        setEtiqueta(etiqueta);
+    }
+
     public String toString() {
-        return "Valgo" + valor;
+        return "Valgo " + valor + " " + etiqueta;
     }
 
     public int getValor() {
@@ -31,11 +42,31 @@ public class Contador {
         //valor = Math.min(Math.max(nuevoValor, MIN), MAX);
     }
 
+    public String getEtiqueta() {
+        return etiqueta;
+    }
+
+    public void setEtiqueta(String nuevaEtiqueta) {
+        etiqueta = nuevaEtiqueta;
+    }
+
+    public void resetear() {
+        setValor(POR_DEFECTO);
+    }
+
     public void incrementar() {
         setValor(valor + 1);
     }
 
+    public void incrementar(int incremento) {
+        setValor(valor + incremento);
+    }
+
     public void decrementar() {
         setValor(valor - 1);
+    }
+
+    public void decrementar(int decremento) {
+        setValor(valor - decremento);
     }
 }
