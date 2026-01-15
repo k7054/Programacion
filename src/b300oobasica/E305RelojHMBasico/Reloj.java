@@ -13,13 +13,16 @@ public class Reloj {
     }
 
     public Reloj(int h, int m) {
-        horas = h;
-        minutos = m;
+        conversorMinutos((h * 60) + m);
     }
 
     public Reloj(int totalMinutos) {
-        horas = totalMinutos / 60;
-        minutos = totalMinutos % 60;
+        conversorMinutos(totalMinutos);
+    }
+
+    public void conversorMinutos(int minutosTotales) {
+        horas = minutosTotales / 60;
+        minutos = minutosTotales % 60;
     }
 
     public String toString() {
@@ -27,6 +30,37 @@ public class Reloj {
     }
 
     public void tick() {
-        minutos++;
+        sumarMinutos(1);
+    }
+
+    public void sumarMinutos(int minutosSumados) {
+        int totalMinutos = horas * 60 + minutos;
+        totalMinutos = totalMinutos + minutosSumados;
+
+        totalMinutos = totalMinutos % 1440;
+
+        conversorMinutos(totalMinutos);
+    }
+
+    public void restarMinutos(int minutosRestados) {
+        int totalMinutos = horas * 60 + minutos;
+        totalMinutos = totalMinutos - minutosRestados;
+
+        totalMinutos = ((totalMinutos % 1440) + 1440) % 1440;
+
+        conversorMinutos(totalMinutos);
+    }
+
+    public int diferenciaMinutos(Reloj otro) {
+        return Math.abs((horas * 60 + minutos) - (otro.horas * 60 + otro.minutos));
+    }
+
+    public Reloj diferenciaReloj(Reloj otro) {
+        int diferencia = diferenciaMinutos(otro);
+
+        int hora = diferencia / 60;
+        int minuto = diferencia % 60;
+
+        return new Reloj(hora, minuto);
     }
 }
