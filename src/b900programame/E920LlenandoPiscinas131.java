@@ -3,42 +3,49 @@ package b900programame;
 import java.util.Scanner;
 
 public class E920LlenandoPiscinas131 {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
+        while (true) {
+            int litrosPiscinaYo = entrada.nextInt();
+            int litrosBarrenioYo = entrada.nextInt();
+            int litrosPerdidosYo = entrada.nextInt();
 
-        int litrosPiscinaYo;
-        int litrosBarrenioYo;
-        int litrosPerdidosYo;
+            int litrosPiscinaVecino = entrada.nextInt();
+            int litrosBarrenioVecino = entrada.nextInt();
+            int litrosPerdidosVecino = entrada.nextInt();
 
-        int litrosPiscinaVecino;
-        int litrosBarrenioVecino;
-        int litrosPerdidosVecino;
-
-        int viajesYO;
-        int viajesVecino;
-
-        do {
-            System.out.println("YO");
-            litrosPiscinaYo = entrada.nextInt();
-            litrosBarrenioYo = entrada.nextInt();
-            litrosPerdidosYo = entrada.nextInt();
-
-            System.out.println("VECINO");
-            litrosPiscinaVecino = entrada.nextInt();
-            litrosBarrenioVecino = entrada.nextInt();
-            litrosPerdidosVecino = entrada.nextInt();
-
-            viajesYO = litrosPiscinaVecino % (litrosBarrenioVecino - litrosPerdidosVecino);
-            viajesVecino = litrosPiscinaYo % (litrosBarrenioYo - litrosPerdidosYo);
-
-            if (viajesYO < viajesVecino) {
-                System.out.printf("YO %d", viajesYO);
-            } else if (viajesVecino < viajesYO) {
-                System.out.printf("VECINO %d", viajesVecino);
-            } else {
-                System.out.printf("EMPATE %d", viajesYO);
+            if (litrosPiscinaYo == 0 && litrosPiscinaVecino == 0) {
+                break;
             }
-        } while (litrosPiscinaYo != 0 && litrosPiscinaVecino != 0);
+
+            int capacidadYo = litrosBarrenioYo - litrosPerdidosYo;
+            int capacidadVecino = litrosBarrenioVecino - litrosPerdidosVecino;
+
+            int viajesYo = Integer.MAX_VALUE;
+            int viajesVecino = Integer.MAX_VALUE;
+
+            if (capacidadYo > 0) {
+                viajesYo = litrosPiscinaYo / capacidadYo;
+                if (litrosPiscinaYo % capacidadYo != 0) {
+                    viajesYo++;
+                }
+            }
+
+            if (capacidadVecino > 0) {
+                viajesVecino = litrosPiscinaVecino / capacidadVecino;
+                if (litrosPiscinaVecino % capacidadVecino != 0) {
+                    viajesVecino++;
+                }
+            }
+
+            if (viajesYo < viajesVecino) {
+                System.out.println("YO " + viajesYo);
+            } else if (viajesVecino < viajesYo) {
+                System.out.println("VECINO " + viajesVecino);
+            } else {
+                System.out.println("EMPATE " + viajesYo);
+            }
+        }
     }
 }
