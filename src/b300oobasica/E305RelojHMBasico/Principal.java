@@ -27,5 +27,7 @@ public class Principal {
         Reloj difReloj = reloj2.diferenciaReloj(reloj3);
 
         System.out.println("Diferencia en Reloj entre reloj2 y reloj3: " + difReloj);
+
+        Reloj reloj4 = reloj1.clone();
     }
 }

@@ -63,4 +63,17 @@ public class Reloj {
 
         return new Reloj(hora, minuto);
     }
+
+    public Reloj clone() {
+        return new Reloj(this.horas, this.minutos);
+    }
+
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
+
+        if (!(obj instanceof Reloj)) return false;
+
+        Reloj otro = (Reloj) obj;
+        return ((this.horas == otro.horas) && (this.minutos == otro.minutos));
+    }
 }
