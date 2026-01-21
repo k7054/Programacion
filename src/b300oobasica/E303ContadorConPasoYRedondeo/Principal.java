@@ -4,44 +4,26 @@ import java.util.Scanner;
 
 public class Principal {
     static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
+        Contador c1 = new Contador(); // Valor inicial por defecto 50, paso por defecto 1, no redondeo.
+        Contador c2 = new Contador(77); // Valor inicial 77, paso por defecto 1, no redondeo.
+        Contador c3 = new Contador(77, 5); // Valor inicial 77, paso 5, no redondeo.
+        Contador c4 = new Contador(77, 5, true); // Valor inicial (redondeado) 75, paso 5, sí redondeo.
 
-        Contador c = new Contador(23000, "balones");
-        c.incrementar();
-        c.incrementar();
-        c.decrementar();
-        IO.println(c);
-        c.incrementar(10);
-        IO.println(c);
+        System.out.println(c1);
+        System.out.println(c2);
+        System.out.println(c3);
+        System.out.println(c4);
 
-        Contador c2 = new Contador();
-        c2.incrementar();
-        c2.incrementar();
-        c2.decrementar();
-        IO.println(c2);
-        c.decrementar(10);
-        IO.println(c2);
-        c2.resetear();
-        IO.println(c2);
+        c1.incrementar();
+        System.out.println("Tras incrementar: " + c1);
 
-        Contador c3 = new Contador("coches");
-        c3.incrementar();
-        c3.incrementar();
+        c2.incrementar(10);
+        System.out.println("Tras incrementar (10): " + c2);
+
         c3.decrementar();
-        IO.println(c3);
-        c.decrementar(10);
-        IO.println(c3);
-        c3.resetear();
-        IO.println(c3);
+        System.out.println("Tras decrementar: " + c3);
 
-        Contador c4 = new Contador(23);
-        c4.incrementar();
-        c4.incrementar();
-        c4.decrementar();
-        IO.println(c4);
-        c.decrementar(10);
-        IO.println(c4);
-        c4.resetear();
-        IO.println(c4);
+        c4.decrementar(10);
+        System.out.println("Tras decrementar (10): " + c4);
     }
 }
