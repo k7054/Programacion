@@ -1,16 +1,16 @@
 package b300oobasica.E304NumeroInteligenteBasico;
 
-public class Contador {
+public class NumeroInteligente {
     private static final int POR_DEFECTO = 1;
 
     private int valor = 0;
     private int numeroPerfecto = 0;
 
-    public Contador() {
+    public NumeroInteligente() {
         setValor(POR_DEFECTO);
     }
 
-    public Contador(int valor) {
+    public NumeroInteligente(int valor) {
         setValor(valor);
     }
 

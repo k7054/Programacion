@@ -2,7 +2,7 @@ package b300oobasica.E304NumeroInteligenteBasico;
 
 public class Principal {
     static void main(String[] args) {
-        Contador n1 = new Contador();
+        NumeroInteligente n1 = new NumeroInteligente();
 
         for (int i = 1; i <= 100; i++) {
             n1.setValor(i);
@@ -16,7 +16,7 @@ public class Principal {
         IO.println();
 
         IO.println("Primero 100 números primos:");
-        Contador n2 = new Contador(2);
+        NumeroInteligente n2 = new NumeroInteligente(2);
 
         int contador = 0;
 
@@ -30,7 +30,7 @@ public class Principal {
 
         IO.println();
 
-        Contador n3 = new Contador();
+        NumeroInteligente n3 = new NumeroInteligente();
 
         IO.println("Utilizamos la formula de Euclides (2^{n-1} * (2^{n} - 1)), siempre que (2^{n} - 1) sea primo de Mersenne.");
         for (int i = 1; i <= 15; i++) {
