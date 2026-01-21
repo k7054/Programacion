@@ -7,26 +7,29 @@ public class Reloj {
         this(8, 15);
     }
 
-    public Reloj(int h, int m) {
-        this.totalMinutos = h * 60 + m;
-        normalizar();
+    public Reloj(int horas, int min) {
+        this(horas * 60 + min);
     }
 
     public Reloj(int totalMinutos) {
-        this.totalMinutos = totalMinutos;
+        setTotalMinutos(totalMinutos);
         normalizar();
     }
 
-    public int getH() {
+    public int getHoras() {
         return totalMinutos / 60;
     }
 
-    public int getM() {
+    public int getMin() {
         return totalMinutos % 60;
     }
 
+    public void setTotalMinutos(int totalMinutos) {
+        this.totalMinutos = totalMinutos;
+    }
+
     public String toString() {
-        return String.format("%02d:%02d", getH(), getM());
+        return String.format("%02d:%02d", getHoras(), getMin());
     }
 
     public boolean equals(Object obj) {
@@ -45,19 +48,21 @@ public class Reloj {
         totalMinutos = totalMinutos % 1440;
 
         if (totalMinutos < 0) {
-            totalMinutos = totalMinutos + 1440;
+            totalMinutos += 1440;
         }
     }
 
     public void tick() {
         sumarMinutos(1);
     }
+
     public void sumarMinutos(int minutos) {
-        totalMinutos = totalMinutos + minutos;
+        setTotalMinutos(totalMinutos += minutos);
         normalizar();
     }
+
     public void restarMinutos(int minutos) {
-        totalMinutos = totalMinutos - minutos;
+        setTotalMinutos(totalMinutos -= minutos);
         normalizar();
     }
 
@@ -66,6 +71,6 @@ public class Reloj {
     }
 
     public Reloj diferenciaReloj(Reloj otro) {
-        return new Reloj(diferenciaMinutos(otro));
+        return new Reloj(this.diferenciaMinutos(otro));
     }
 }
