@@ -29,7 +29,7 @@ public class Contador {
     }
 
     public String toString() {
-        return "Valgo " + valor;
+        return "Valgo " + getValor() + (redondeo ? " r" : " ");
     }
 
     public int getValor() {
