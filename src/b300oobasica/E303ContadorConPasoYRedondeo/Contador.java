@@ -29,7 +29,7 @@ public class Contador {
     }
 
     public String toString() {
-        return "Valgo " + valor;
+        return "Valgo " + getValor() + (redondeo ? " r" : " ");
     }
 
     public int getValor() {
@@ -37,7 +37,7 @@ public class Contador {
     }
 
     public void setValor(int nuevoValor) {
-        int valorRedondeado = ((nuevoValor + paso - 1) / paso) * paso;
+        int valorRedondeado = (nuevoValor / paso) * paso;
 
         if (isRedondeo()) {
             nuevoValor = valorRedondeado;
