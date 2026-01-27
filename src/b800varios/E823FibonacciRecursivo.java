@@ -1,6 +1,6 @@
 package b800varios;
 
-public class E823FibonacciRecursivo {
+public class    E823FibonacciRecursivo {
 
     public static int fibonacci(int numero) {
         if (numero == 1) {
