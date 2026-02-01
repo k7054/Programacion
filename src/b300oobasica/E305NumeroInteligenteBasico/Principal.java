@@ -1,4 +1,4 @@
-package b300oobasica.E304NumeroInteligenteBasico;
+package b300oobasica.E305NumeroInteligenteBasico;
 
 public class Principal {
     static void main(String[] args) {

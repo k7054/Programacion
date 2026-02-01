@@ -1,7 +1,5 @@
 package b300oobasica.E302ContadorCompletoEqualsClone;
 
-import b300oobasica.E307RelojTotalMinutosBasico.Reloj;
-
 public class Contador {
     private static final int MIN = 0;
     private static final int MAX = 100;

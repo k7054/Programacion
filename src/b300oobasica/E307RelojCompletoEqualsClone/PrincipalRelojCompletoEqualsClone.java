@@ -1,6 +1,6 @@
-package b300oobasica.E307RelojTotalMinutosBasico;
+package b300oobasica.E307RelojCompletoEqualsClone;
 
-public class PrincipalTotalMinutos {
+public class PrincipalRelojCompletoEqualsClone {
     static void main(String[] args) {
         Reloj reloj1 = new Reloj();
         Reloj reloj2 = new Reloj(150);

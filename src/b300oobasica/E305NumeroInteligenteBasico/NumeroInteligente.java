@@ -1,4 +1,4 @@
-package b300oobasica.E304NumeroInteligenteBasico;
+package b300oobasica.E305NumeroInteligenteBasico;
 
 public class NumeroInteligente {
     private static final int POR_DEFECTO = 1;

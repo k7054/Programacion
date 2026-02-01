@@ -1,4 +1,4 @@
-package b300oobasica.E305RelojHMBasico;
+package b300oobasica.E306RelojHMBasico;
 
 public class Reloj {
     private int h, m;

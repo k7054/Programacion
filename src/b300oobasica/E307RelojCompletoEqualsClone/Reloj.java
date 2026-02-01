@@ -1,4 +1,4 @@
-package b300oobasica.E307RelojTotalMinutosBasico;
+package b300oobasica.E307RelojCompletoEqualsClone;
 
 public class Reloj {
     private int totalMinutos;
