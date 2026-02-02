@@ -2,7 +2,7 @@ package b300oobasica.E310CuentaBancaria;
 
 public class Principal {
     public static void main(String[] args) {
-        CuentaBancaria cuenta1 = new CuentaBancaria(100, 0);
+        CuentaBancaria cuenta1 = new CuentaBancaria(100);
         CuentaBancaria cuenta2 = new CuentaBancaria(50, 70);
 
         System.out.println("Cuenta 1: " + cuenta1);

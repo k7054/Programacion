@@ -7,6 +7,10 @@ public class CuentaBancaria {
     public CuentaBancaria() {
     }
 
+    public CuentaBancaria(int saldo) {
+        this.saldo = conversionCents(saldo);
+    }
+
     public CuentaBancaria(int saldo, int descubierto) {
         this.saldo = conversionCents(saldo);
         this.descubierto = conversionCents(descubierto);

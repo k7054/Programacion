@@ -7,6 +7,10 @@ public class CuentaBancaria {
     public CuentaBancaria() {
     }
 
+    public CuentaBancaria(double saldo) {
+        this.saldo = saldo;
+    }
+
     public CuentaBancaria(double saldo, double descubierto) {
         this.saldo = saldo;
         this.descubierto = Math.abs(descubierto);
