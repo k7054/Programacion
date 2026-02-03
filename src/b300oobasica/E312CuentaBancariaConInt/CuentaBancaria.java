@@ -36,8 +36,8 @@ public class CuentaBancaria {
         return new CuentaBancaria(this.saldo / 100, this.descubierto / 100);
     }
 
-    private int conversionCents(int euros) {
-        return euros * 100;
+    private int conversionCents(double euros) {
+        return (int) Math.round(euros * 100);
     }
 
     public void ingresarCajero(int ingresarSaldo) {
@@ -54,7 +54,7 @@ public class CuentaBancaria {
         saldo = saldo - conversionCents(extraerSaldo);
     }
 
-    public void cargarRecibo(int importeRecibo) {
+    public void cargarRecibo(double importeRecibo) {
         int saldoFinal = saldo - conversionCents(importeRecibo);
 
         if (saldoFinal < -descubierto) {

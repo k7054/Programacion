@@ -21,12 +21,11 @@ public class Globo {
     public String toString() {
         StringBuilder cadena = new StringBuilder();
 
-        for (int i = 0; i < cantidadAire; i++) {
-            cadena.append("*");
-        }
-
-        for (int i = cantidadAire; i < capacidad; i++) {
-            cadena.append("O");
+        if (!estaExplotado()) {
+            cadena.append("*".repeat(cantidadAire));
+            cadena.append("O".repeat(capacidad - cantidadAire));
+        } else {
+            cadena.append("!".repeat(capacidad));
         }
 
         return cadena.toString();
