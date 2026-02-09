@@ -1,51 +1,58 @@
 package b300oobasica.E321ArrayListBasico;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Principal {
     public static void main(String[] args) {
-        // Se declara una lista con ESPACIO INICIAL para 10 posiciones
-        // (pero con CERO posiciones con datos y por tanto con tamaño CERO).
-        // La lista se parametriza con el tipo Integer.
-        ArrayList<Integer> lista = new ArrayList<Integer>();
+        ArrayList<Integer> lista1 = new ArrayList<>();
+        ArrayList<Integer> lista2 = new ArrayList<>();
 
-        // Se imprime el tamaño de la lista.
-        System.out.println(lista.size());
-        System.out.println();
+        lista1.add(50);
+        lista1.add(100);
+        lista1.add(60);
 
-        // Se añaden algunos valores, que deberán ser de tipo Integer
-        // pero gracias a la ayuda del compilador autoboxing/autounboxing
-        // podemos escribir en forma de int normales (¡pero NO son int-s!).
-        lista.add(17);
-        lista.add(new Integer(8));
-        lista.add(31);
+        lista1.add(1, 43);
 
-        // Se imprime el tamaño de la lista.
-        System.out.println(lista.size());
-        System.out.println();
+        System.out.println(lista1);
 
-        // Se recorre la lista mediante una VARIABLE de control clásica:
-        for (int i = 0; i < lista.size(); i++) {
-            Integer elem = lista.get(i);
+        System.out.printf("Tamaño guardado en la lista1: %d%n", lista1.size());
 
-            System.out.println(elem);
+        System.out.printf("Indice 1: %d%n", lista1.get(1));
+
+        System.out.printf("La lista1 contiene el número 90?: %b%n", lista1.contains(90));
+
+        System.out.printf("La lista1 contiene el número 50?: %b%n", lista1.contains(50));
+
+        lista1.remove(new Integer(43));
+        lista1.remove(Integer.valueOf(43)); // Hace lo mismo que el anterior.
+
+        // OJO: esto NO hace lo que yo quiero (quita el elemento de la posición 43)
+        // porque ES UN MÉTODO DISTINTO (SOBRECARGADO).
+        // lista1.remove(43);
+
+        System.out.printf("La lista1 tiene el número 43?: %b%n", lista1.contains(43));
+
+        lista2.add(100);
+        lista2.add(200);
+
+        lista1.addAll(lista2);
+
+        System.out.printf("Tamaño después de addAll: %d%n", lista1.size());
+
+        System.out.println("Contenido en la lista1: ");
+
+        for (int i = 0; i < lista1.size(); i++) {
+            System.out.printf("La posición %d -> %d%n", i, lista1.get(i));
         }
 
-        System.out.println();
-
-        // Se recorre la lista mediante un FOREACH:
-        for (Integer elem : lista) {
-            System.out.println(elem);
+        for (int n : lista1) {
+            System.out.printf("La posición ? -> %d%n", n);
         }
 
-        System.out.println();
+        lista2.clear();
 
-        // Se recorre la lista mediante un ITERATOR parametrizado a Integer:
-        for (Iterator<Integer> iterator = lista.iterator(); iterator.hasNext(); ) {
-            Integer elem = iterator.next();
-
-            System.out.println(elem);
-        }
+        System.out.printf("lista2 está vacía?: %b%n", lista2.isEmpty());
     }
 }
