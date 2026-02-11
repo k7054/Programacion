@@ -52,9 +52,7 @@ public class Frase {
     }
 
     public void recortar(int numCaracteres) {
-        System.out.println(texto.length());
         texto.setLength(texto.length() - numCaracteres);
-        System.out.println(texto.length());
 
         if (!texto.isEmpty() && texto.charAt(texto.length() - 1) == ' ') {
             texto.setLength(texto.length() - 1);
