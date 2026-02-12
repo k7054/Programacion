@@ -14,23 +14,14 @@ public class Bombo {
     }
 
     public String toString() {
-        StringBuilder dentroFuera = new StringBuilder();
+        StringBuilder dentro = new StringBuilder("Dentro: ");
+        StringBuilder fuera = new StringBuilder("Fuera: ");
 
-        dentroFuera.append("Dentro: ");
         for (int i = 1; i < bolas.length; i++) {
-            if (bolas[i]) {
-                dentroFuera.append(i + " ");
-            }
+            (bolas[i] ? dentro : fuera).append(i + " ");
         }
 
-        dentroFuera.append("\nFuera: ");
-        for (int i = 1; i < bolas.length; i++) {
-            if (!bolas[i]) {
-                dentroFuera.append(i + " ");
-            }
-        }
-
-        return dentroFuera.toString();
+        return dentro + "\n" + fuera;
     }
 
     public int dameBola() {
