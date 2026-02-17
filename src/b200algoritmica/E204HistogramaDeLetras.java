@@ -10,8 +10,6 @@ public class E204HistogramaDeLetras {
 
         int[] caracteres = new int[26];
 
-        int contador;
-
         for (int i = 0; i < frase.length(); i++) {
             char caracterActual = frase.charAt(i);
 
