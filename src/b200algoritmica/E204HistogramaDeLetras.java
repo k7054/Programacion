@@ -14,19 +14,18 @@ public class E204HistogramaDeLetras {
 
         for (int i = 0; i < frase.length(); i++) {
             char caracterActual = frase.charAt(i);
-            int indiceCaracteres = 0;
+
 
             if (caracterActual >= 'a' && caracterActual <= 'z') {
-                indiceCaracteres = caracterActual - 'a';
+                int indiceCaracteres = caracterActual - 'a';
+                caracteres[indiceCaracteres]++;
             }
-
-            caracteres[indiceCaracteres]++;
         }
 
-        for (int c = 0; c < caracteres.length; c++) {
-            char caracter = (char) (97+c);
+        for (int indiceCaracter = 0; indiceCaracter < caracteres.length; indiceCaracter++) {
+            char caracter = (char) ('a' + indiceCaracter);
             System.out.printf("%s: ", caracter);
-            for (int asteriscos = 0; asteriscos < caracteres[c]; asteriscos++) {
+            for (int asteriscos = 0; asteriscos < caracteres[indiceCaracter]; asteriscos++) {
                 System.out.print("* ");
             }
             System.out.println();
