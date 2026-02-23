@@ -20,10 +20,11 @@ public class E224AnalizadorDeTexto {
             if (frase.charAt(i) != ' ') {
                 contadorLetras++;
             } else {
-                if (contadorLetras >= 5) {
-                    contadorPalabrasLargas++;
-                }
                 contadorLetras = 0;
+            }
+
+            if (contadorLetras == 5) {
+                contadorPalabrasLargas++;
             }
         }
 
