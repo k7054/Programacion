@@ -13,7 +13,7 @@ public class Circulo extends Figura {
     }
 
     public String toString() {
-        return getColor() + "Círculo, radio = " + getRadio() + ", área = " + calcularArea() + "\u001B[0m";
+        return getColor() + "Círculo, radio = " + getRadio() + ", área = " + calcularArea() + RESET;
     }
 
     public double getRadio() {

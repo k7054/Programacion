@@ -14,7 +14,7 @@ public class Rectangulo extends Figura {
     }
 
     public String toString() {
-        return getColor() + "Rectángulo, base = " + base + ", altura = " + altura + ", área = " + calcularArea() + "\u001B[0m";
+        return getColor() + "Rectángulo, base = " + base + ", altura = " + altura + ", área = " + calcularArea() + RESET;
     }
 
     public double getBase() {

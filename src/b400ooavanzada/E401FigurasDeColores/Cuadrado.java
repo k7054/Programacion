@@ -6,7 +6,7 @@ public class Cuadrado extends Rectangulo {
     }
 
     public String toString() {
-        return getColor() + "Cuadrado, lado = " + getLado() + ", área = " + calcularArea() + "\u001B[0m";
+        return getColor() + "Cuadrado, lado = " + getLado() + ", área = " + calcularArea() + RESET;
     }
 
     public double getLado() {

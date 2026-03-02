@@ -1,11 +1,11 @@
 package b400ooavanzada.E401FigurasDeColores;
 
 public class Principal {
-    static void main(String[] args) {
-        String rojo = "\u001B[31m";
-        String verde = "\u001B[32m";
-        String azul = "\u001B[34m";
+    public static final String rojo = "\u001B[31m";
+    public static final String verde = "\u001B[32m";
+    public static final String azul = "\u001B[34m";
 
+    static void main(String[] args) {
         Figura f1 = new Circulo(70, rojo);
         Figura f2 = new Cuadrado(20, verde);
         Figura f3 = new Rectangulo(23, 45, azul);
