@@ -2,6 +2,9 @@ package b400ooavanzada.E401FigurasDeColores;
 
 public abstract class Figura {
     public static final String RESET = "\u001B[0m";
+    public static final String rojo = "\u001B[31m";
+    public static final String verde = "\u001B[32m";
+    public static final String azul = "\u001B[34m";
 
     public String color;
 
