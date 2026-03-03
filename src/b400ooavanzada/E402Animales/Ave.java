@@ -1,11 +1,15 @@
 package b400ooavanzada.E402Animales;
 
-public class Ave extends  Animal {
-    public String hablar() {
-        return "";
+public abstract class Ave extends Animal {
+    public Ave() {
+        super();
     }
 
-    public int come(int cantidadComida) {
-        return 0;
+    public Ave(int energia) {
+        super(energia);
+    }
+
+    public void habla() {
+        reducirEnergia(2);
     }
 }

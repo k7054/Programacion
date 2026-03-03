@@ -28,6 +28,10 @@ public abstract class Animal {
         }
     }
 
-    public abstract String hablar();
-    public abstract int come(int cantidadComida);
+    protected void reducirEnergia(int cantidad) {
+        setEnergia(energia - cantidad);
+    }
+
+    public abstract void habla();
+    public abstract void come(int cantidadComida);
 }

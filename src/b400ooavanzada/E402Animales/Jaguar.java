@@ -1,27 +1,27 @@
 package b400ooavanzada.E402Animales;
 
-public class Gato extends Mamifero {
-    public Gato() {
+public class Jaguar extends Mamifero {
+    public Jaguar() {
         super();
     }
 
-    public Gato(int energia) {
+    public Jaguar(int energia) {
         super(energia);
     }
 
     public void habla() {
         if (energia < 30) {
-            System.out.println("miauuuuuu");
+            System.out.println("grrrrrrrr-uhhh");
         } else if (energia >= 30 && energia < 70) {
-            System.out.println("miau");
+            System.out.println("grrr-uh");
         } else {
-            System.out.println("¡MIAU!");
+            System.out.println("¡GRRRRRR-UH!");
         }
 
         super.habla();
     }
 
     public void come(int cantidad) {
-        setEnergia(getEnergia() + (cantidad * 12));
+        setEnergia(getEnergia() + (cantidad * 20));
     }
 }
