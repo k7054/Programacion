@@ -14,13 +14,12 @@ public class Fibo {
     }
 
     public int obtenerSiguiente() {
-        if (numAnterior == 0 && numActual == 1) {
-
-        }
-
         numSiguiente = numAnterior + numActual;
+
+        int resultado = numAnterior;
+
         numAnterior = numActual;
         numActual = numSiguiente;
-        return numSiguiente;
+        return resultado;
     }
 }
