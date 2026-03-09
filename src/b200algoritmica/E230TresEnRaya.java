@@ -22,8 +22,8 @@ public class E230TresEnRaya {
             return matriz[0][0];
         }
 
-        if (matriz[0][2] == matriz[1][1] && matriz[1][1] == matriz[0][0] && matriz[0][2] != 0) {
-            return matriz[0][2];
+        if (matriz[0][2] == matriz[1][1] && matriz[1][1] == matriz[2][0] && matriz[2][0] != 0) {
+            return matriz[2][0];
         }
 
         return 0;
@@ -44,12 +44,12 @@ public class E230TresEnRaya {
     public static void mostrarTablero() {
         for (int fil = 0; fil < matriz.length; fil++) {
             for (int col = 0; col < matriz[fil].length; col++) {
-                if (matriz[fil][col] == 0) {
-                    System.out.print(" _ ");
-                } else if (matriz[fil][col] == 1) {
-                    System.out.print(" X ");
+                if (matriz[fil][col] == 1) {
+                    System.out.print("[X]");
+                } else if (matriz[fil][col] == 2) {
+                    System.out.print("[O]");
                 } else {
-                    System.out.print(" O ");
+                    System.out.print("[ ]");
                 }
             }
             System.out.println();
