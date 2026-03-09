@@ -6,18 +6,15 @@ public class E04_CompresionRLE {
         StringBuilder string = new StringBuilder();
 
         int contador = 1;
-        for (int i = 1; i < texto.length(); i++) {
-            if (texto.charAt(i) == texto.charAt(i - 1)) {
+        for (int i = 0; i < texto.length(); i++) {
+            if (i + 1 < texto.length() && texto.charAt(i) == texto.charAt(i + 1)) {
                 contador++;
             } else {
-                string.append(texto.charAt(i - 1));
+                string.append(texto.charAt(i));
                 string.append(contador);
                 contador = 1;
             }
         }
-
-        string.append(texto.charAt(texto.length() - 1));
-        string.append(contador);
 
         return string.toString();
     }
