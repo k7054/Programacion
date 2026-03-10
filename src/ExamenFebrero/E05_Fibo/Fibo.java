@@ -6,9 +6,6 @@ public class Fibo {
     private int numActual   = 1;
     private int numSiguiente;
 
-    public Fibo() {
-    }
-
     public String toString() {
         return "" + numSiguiente;
     }
