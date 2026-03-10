@@ -6,6 +6,10 @@ public class Cuadrado extends Rectangulo {
         super(lado, lado);
     }
 
+    public String toString() {
+        return "Cuadrado, lado = " + getLado() + ", área = " + calcularArea();
+    }
+
     public void setBase(double base) {
         super.setBase(base);
         super.setAltura(base);

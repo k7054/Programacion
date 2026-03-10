@@ -8,6 +8,10 @@ public class Circulo extends Figura {
         setRadio(radio);
     }
 
+    public String toString() {
+        return "Círculo, radio = " + getRadio() + ", área = " + calcularArea();
+    }
+
     public double calcularArea() {
         return Math.PI * getRadio() * getRadio();
     }
