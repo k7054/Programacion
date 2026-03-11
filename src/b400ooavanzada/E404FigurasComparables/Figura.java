@@ -2,6 +2,7 @@ package b400ooavanzada.E404FigurasComparables;
 
 public abstract class Figura implements Comparable<Figura> {
     public abstract double calcularArea();
+    public abstract String toString();
 
     public int compareTo(Figura otra) {
         double diferencia = this.calcularArea() - otra.calcularArea();

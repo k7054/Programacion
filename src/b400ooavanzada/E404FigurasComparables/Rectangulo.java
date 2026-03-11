@@ -9,6 +9,10 @@ public class Rectangulo extends Figura {
         setAltura(altura);
     }
 
+    public String toString() {
+        return "Rectángulo, base = " + base + ", altura = " + altura + ", área = " + calcularArea();
+    }
+
     public double calcularArea() {
         return getBase() * getAltura();
     }
