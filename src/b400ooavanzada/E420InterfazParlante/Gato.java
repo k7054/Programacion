@@ -25,6 +25,6 @@ public class Gato extends Mamifero implements Parlante {
 
         System.out.println(habla);
 
-        super.habla();
+        gastarEnergiaPorHablar();
     }
 }

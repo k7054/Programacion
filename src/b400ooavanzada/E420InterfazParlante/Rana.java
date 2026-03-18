@@ -20,6 +20,6 @@ public class Rana extends Anfibio implements Parlante {
 
         System.out.println(habla);
 
-        super.habla();
+        gastarEnergiaPorHablar();
     }
 }

@@ -20,6 +20,6 @@ public class Pajaro extends Ave implements Parlante {
 
         System.out.println(habla);
 
-        super.habla();
+        gastarEnergiaPorHablar();
     }
 }

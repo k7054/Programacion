@@ -20,6 +20,6 @@ public class Perezoso extends Mamifero implements Parlante {
 
         System.out.println(habla);
 
-        super.habla();
+        gastarEnergiaPorHablar();
     }
 }

@@ -11,17 +11,22 @@ public class Principal {
         animales.add(new Pajaro("Piolín", 80));
         animales.add(new Perezoso("Lily"));
         animales.add(new Rana("Gustavo", 50));
+        animales.add(new Conejo("Bugs"));
+        animales.add(new Hormiga("Anty"));
 
         while (true) {
             for (Animal animal : animales) {
-                animal.habla();
-
                 if (Math.random() < 0.30) {
                     int cantidad = (int) (Math.random() * 3) + 1;
                     animal.come(cantidad);
                     System.out.printf("%s come %d.\n", animal, cantidad);
                 } else {
                     System.out.println();
+                }
+
+                if (animal instanceof Parlante) {
+                    Parlante parlante = (Parlante) animal;
+                    parlante.habla();
                 }
             }
 
