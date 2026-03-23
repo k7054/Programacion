@@ -1,16 +1,15 @@
 package b400ooavanzada.E430GlobosConJugadoresMixtos;
 
+import java.util.Random;
+
 public class JugadorCpu extends Jugador {
-    private static final int MAX_SOPLO = 10;
+    private Random random = new Random();
 
     public JugadorCpu(String nombre) {
         super(nombre);
     }
 
-    @Override
     public int determinarSoplo() {
-        int soplo = (int) (Math.random() * MAX_SOPLO) + 1;
-        System.out.println(getNombre() + " (CPU) sopla: " + soplo);
-        return soplo;
+        return random.nextInt(SOPLO_MINIMO, SOPLO_MAXIMO+1);
     }
 }
