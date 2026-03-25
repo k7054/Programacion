@@ -16,12 +16,18 @@ public class Principal {
 
             double tiempo = 0.0;
 
+            int imprimirCada = 1;
+
             // El bucle continúa mientras el proyectil esté sobre el suelo
             while (p.getAltura() >= 0) {
-
-                // Imprimimos el estado ANTES de actualizar
-                System.out.printf("%-10.2f %-15.4f %-15.4f%n",
-                        tiempo, p.getAltura(), p.getVelocidad());
+                if (imprimirCada == 1) {
+                    // Imprimimos el estado ANTES de actualizar
+                    System.out.printf("%-10.2f %-15.4f %-15.4f%n",
+                            tiempo, p.getAltura(), p.getVelocidad());
+                    imprimirCada = (int) (1 / deltaTiempo);
+                } else {
+                    imprimirCada--;
+                }
 
                 // Actualizamos la física
                 p.actualizar(deltaTiempo);
