@@ -1,12 +1,12 @@
 package b300oobasica.E360TiroVertical;
 
 public class Proyectil {
+    // Constante física (negativa porque va hacia abajo)
+    private static final double GRAVEDAD = -9.81;
+
     // Atributos privados: el "estado" del proyectil
     private double altura;    // metros sobre el suelo
     private double velocidad; // metros por segundo
-
-    // Constante física (negativa porque va hacia abajo)
-    private static final double GRAVEDAD = -9.81;
 
     // Constructor: recibe velocidad inicial, altura empieza en 0
     public Proyectil(double velocidadInicial) {
