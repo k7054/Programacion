@@ -1,52 +1,74 @@
 package b800varios.E861ExcepcionesEnReloj;
 
-import b300oobasica.E307RelojCompletoEqualsClone.Reloj;
+import java.util.Scanner;
 
 public class Principal {
 
     public static void main(String[] args) {
-        Reloj reloj1 = new Reloj();
-        Reloj reloj2 = new Reloj(150);
-        Reloj reloj3 = new Reloj(3, 45);
+        Scanner teclado = new Scanner(System.in);
 
-        System.out.println(reloj1);
-        System.out.println(reloj2);
-        System.out.println(reloj3);
+        // ============================================================
+        //  EJEMPLO 1 (del mindmap): sumar minutos con reintento
+        //  — solo captura DesbordamientoRelojException
+        // ============================================================
+        Reloj a = new Reloj(23, 57);
+        boolean operacionOK = false;
 
-        reloj1.tick();
+        System.out.println("=== Ejemplo 1: sumar minutos ===");
+        System.out.println("Valor inicial: " + a + "\n");
 
-        reloj1.sumarMinutos(-80);
+        do {
+            try {
+                System.out.print("Indica los minutos que quieres sumar: ");
+                int minutos = teclado.nextInt();
+                a.sumar(minutos);
+                operacionOK = true;
+            } catch (DesbordamientoRelojException e) {
+                if (e.isSuperior())
+                    System.out.println("Te has intentado salir del día por arriba. Inténtalo de nuevo.");
+                else
+                    System.out.println("Te has intentado salir del día por abajo. Inténtalo de nuevo.");
+            } catch (OperacionNegativaRelojException e) {
+                // En sumar no debería llegar aquí porque el usuario introduce
+                // un entero positivo, pero el compilador lo exige.
+                System.out.println(e.getMessage());
+            }
+        } while (!operacionOK);
 
-        System.out.println("Tras tick y sumar unos pocos minutos: " + reloj1);
+        System.out.println("Valor final tras sumar: " + a + "\n");
 
-        reloj1.restarMinutos(20000);
 
-        System.out.println("Restado muchos minutos: " + reloj1);
+        // ============================================================
+        //  EJEMPLO 2 (extra): restar minutos con reintento
+        //  — captura AMBAS excepciones por separado para dar mensajes
+        //    distintos según el error cometido
+        // ============================================================
+        Reloj b = new Reloj(1, 10);   // 01:10 → poco margen hacia abajo
+        operacionOK = false;
 
-        int diferenciaMinutos = reloj2.diferenciaMinutos(reloj3);
+        System.out.println("=== Ejemplo 2: restar minutos ===");
+        System.out.println("Valor inicial: " + b + "\n");
+        System.out.println("(Prueba a poner un número negativo o uno muy grande)");
 
-        System.out.println("Diferencia en minutos entre reloj2 y reloj3: " + diferenciaMinutos);
+        do {
+            try {
+                System.out.print("Indica los minutos que quieres restar: ");
+                int minutos = teclado.nextInt();
+                b.restar(minutos);
+                operacionOK = true;
 
-        Reloj difReloj = reloj2.diferenciaReloj(reloj3);
+            } catch (OperacionNegativaRelojException e) {
+                // El usuario escribió un número negativo
+                System.out.println("Error: " + e.getMessage());
 
-        System.out.println("Diferencia en Reloj entre reloj2 y reloj3: " + difReloj);
+            } catch (DesbordamientoRelojException e) {
+                // El resultado caería por debajo de las 00:00
+                System.out.println("Error: restar esa cantidad dejaría el reloj fuera del día. Inténtalo de nuevo.");
+            }
+        } while (!operacionOK);
 
-        System.out.println("Creando una nueva variable con un nuevo clon:");
-//        Reloj reloj4 = reloj1.clone();
-//        System.out.println("Reloj1 y Reloj4: " + reloj1 + " y " + reloj4);
-//        reloj1.tick();
-//        System.out.println("Reloj1 y Reloj4: " + reloj1 + " y " + reloj4);
+        System.out.println("Valor final tras restar: " + b);
 
-        System.out.println("Creando una nueva variable apuntando al mismo objeto:");
-        Reloj reloj5 = reloj1;
-        System.out.println("Reloj1 y Reloj5: " + reloj1 + " y " + reloj5);
-        reloj1.tick();
-        System.out.println("Reloj1 y Reloj5: " + reloj1 + " y " + reloj5);
-
-        if (reloj1.equals(reloj5)) System.out.println("R1 y R5 Iguales");
-        else System.out.println("R1 y R5 Distintos");
-
-        if (reloj1.equals(reloj2)) System.out.println("R1 y R2 Iguales");
-        else System.out.println("R1 y R2 Distintos");
+        teclado.close();
     }
 }
