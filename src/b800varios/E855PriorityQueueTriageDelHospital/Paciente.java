@@ -1,24 +1,18 @@
 package b800varios.E855PriorityQueueTriageDelHospital;
 
 public class Paciente implements Comparable<Paciente> {
-    public enum NivelGravedad {
-        CRITICO,
-        URGENTE,
-        LEVE
-    }
-
     private String nombre;
     private String sintoma;
-    private NivelGravedad nivelGravedad;
+    private Gravedad gravedad;
 
-    public Paciente(String nombre, String sintoma, NivelGravedad nivelGravedad) {
+    public Paciente(String nombre, String sintoma, Gravedad gravedad) {
         this.nombre = nombre;
         this.sintoma = sintoma;
-        this.nivelGravedad = nivelGravedad;
+        this.gravedad = gravedad;
     }
 
     public String toString() {
-        return "Paciente: " + getNombre() + " / Síntoma: " + getSintoma() + " / Nivel: " + getNivelGravedad();
+        return "Paciente: " + getNombre() + " / Síntoma: " + getSintoma() + " / Nivel: " + getGravedad();
     }
 
     public String getNombre() {
@@ -29,15 +23,11 @@ public class Paciente implements Comparable<Paciente> {
         return sintoma;
     }
 
-    public NivelGravedad getNivelGravedad() {
-        return nivelGravedad;
+    public Gravedad getGravedad() {
+        return gravedad;
     }
 
     public int compareTo(Paciente otro) {
-        int diferencia = this.nivelGravedad.ordinal() - otro.nivelGravedad.ordinal();
-
-        if (diferencia < 0) return -1;
-        else if (diferencia > 0) return 1;
-        else return 0;
+        return this.gravedad.ordinal() - otro.gravedad.ordinal();
     }
 }
